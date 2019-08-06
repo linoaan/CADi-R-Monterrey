@@ -1,0 +1,56 @@
+---
+title: "Ejercicios"
+author: "Lino AA Notarantonio"
+date: "8/6/2019"
+output: word_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE)
+```
+
+**Ejercicio 1** Usa la función _which()_ y determina la entrada de la observación con el valor máximo (resp., mínimo) de la variable $age$ en el dataset _cleve.csv_. Después, haz lo mismo para la variable $chol$. 
+
+**Ejercicio 2** Determina las observaciones de la variable $age$ en el dataset _cleve.csv_ que sean mayores a 
+
+(a) su media
+
+(b) su mediana
+
+¿Cuántas observaciones hay en cada inciso? 
+
+**Ejercicio 3** Usa la función _apply()_ para calcular la desviación estándar del dataframe formado por las variables $age$, $chol$, $trestbps$, $thalac$. Después, calcula la matriz de varianza-covarianza de estas variables, usando la función _var()_
+
+**Ejercicio 4** Calcula una tabla de contingencia con los valores observados de las variables categóricas $fbs$, $restcg$. Usen una de las funciones que vimos en la sesión del 5 de agosto. Después, usen otra de las funciones para calcular una tabla de contingencia con las frecuencias relativas de estas variables. 
+
+**Ejercicio 5** Grafiquen las tablas de contingencias en el inciso anterior usando _barplot_, con la opción de gráficas agrupadas (*grouped barplots*). Después, grafiquen también un _mosaicplot_ de estas variables. 
+
+**Ejercicio 6** Determina con un boxplot con _notch_ si se puede detectar una diferencia entre, $age.mujer.pos$ (edad de las mujeres con diagnóstico positivo) y $age.varon.pos$ (edad de los varones con diagnóstico positivo).
+
+**Ejercicio 7** Prueba la hipótesis 
+\[
+  H_0: age.mujer.pos = age.varon.pos
+\]
+\[
+  H_1: age.mujer.pos \neq age.varon.pos
+\]
+(nivel de significancia: $\alpha = .05$.)
+
+Después, realiza una prueba de potencia con $\delta = 1.2$. Finalmente, calcula el tamaño muestral necesario con estos datos para obtener una potencia de .90. 
+
+**Ejercicio 8** Considera el modelo de regresión lineal (con datos *cleve.csv*)
+\[
+  diagnostic = \beta_0 + \beta_1 chol + \beta_ 2 trestbps + \beta_3 thalac + u
+\]
+Estima el modelo y después valídalo eligiendo de manera aleatoria el 80% de los datos para la estimación y el 20% de los datos para la validación _out of sample_. 
+
+**Ejercicio 9** Estima el modelo logit
+\[
+  \log\left( \frac{diagnostic}{1-diagnostic} \right) = \beta_0 + \beta_1 chol 
+  + \beta_ 2 trestbps + \beta_3 thalac
+\]
+Después, determina la bondad de la estimación comparando los valores de probabilidad observados con los valores predichos. 
+
+**Ejercicio 10** Los datos _AirPassengers_ están cargados por defecto en R. Replica el análisis con el método de Holt-Winters para obtener una estimación de la serie de tiempo. Comparen los valores observados con los valores estimados usando los métodos RMSE, MAE, MAPE. 
+
+**Tip** para la comparación, tomen en cuenta que en la estimación de la serie de tiempo se pierden las primeras 12 observaciones de _AirPassengers_.
